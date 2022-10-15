@@ -1,4 +1,4 @@
-package com.potatogeek.bookkeepingengine.poho;
+package com.potatogeek.bookkeeping.poho;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

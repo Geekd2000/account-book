@@ -1,4 +1,4 @@
-package com.potatogeek.bookkeepingengine;
+package com.potatogeek.bookkeeping;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

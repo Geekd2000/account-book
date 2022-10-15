@@ -1,4 +1,4 @@
-package com.potatogeek.bookkeepingengine.config;
+package com.potatogeek.bookkeeping.config;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;

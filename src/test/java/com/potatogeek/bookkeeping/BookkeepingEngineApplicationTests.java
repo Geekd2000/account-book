@@ -1,7 +1,7 @@
-package com.potatogeek.bookkeepingengine;
+package com.potatogeek.bookkeeping;
 
 import com.alibaba.fastjson.JSON;
-import com.potatogeek.bookkeepingengine.poho.User;
+import com.potatogeek.bookkeeping.poho.User;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
