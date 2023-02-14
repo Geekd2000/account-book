@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.potatogeek</groupId>
     <artifactId>bookkeeping-engine</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>bookkeeping-engine</name>
     <description>bookkeeping-engine</description>
 
