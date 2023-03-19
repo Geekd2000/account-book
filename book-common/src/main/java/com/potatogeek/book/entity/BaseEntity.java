@@ -1,5 +1,8 @@
 package com.potatogeek.book.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -11,6 +14,12 @@ import java.time.LocalDateTime;
 public class BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    /**
+     * 自增id
+     */
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
     /**
      * 创建时间
