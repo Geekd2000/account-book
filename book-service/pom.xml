@@ -19,8 +19,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-cloud-alibaba.version>2.2.10-RC1</spring-cloud-alibaba.version>
+        <book-common>1.0.0-SNAPSHOT</book-common>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.potatogeek.book</groupId>
+            <artifactId>book-common</artifactId>
+            <version>${book-common}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
