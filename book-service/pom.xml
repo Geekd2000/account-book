@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>book</artifactId>
-        <groupId>com.potatogeek</groupId>
+        <artifactId>com.ipotato.book</artifactId>
+        <groupId>com.ipotato</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.potatogeek.book</groupId>
+    <groupId>com.ipotato.book</groupId>
     <artifactId>book-service</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>book-service</name>
@@ -23,7 +23,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.potatogeek.book</groupId>
+            <groupId>com.ipotato.book</groupId>
             <artifactId>book-common</artifactId>
             <version>${book-common}</version>
         </dependency>
@@ -31,30 +31,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo</artifactId>
-            <version>3.1.8</version>
-        </dependency>
-        <!--nacos注册中心的依赖-->
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-registry-nacos</artifactId>
-            <version>3.1.8</version>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -74,7 +55,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.potatogeek.book.BookServiceApplication</mainClass>
+                    <mainClass>com.ipotato.book.BookServiceApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>
