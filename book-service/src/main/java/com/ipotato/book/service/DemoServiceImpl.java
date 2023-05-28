@@ -1,14 +1,15 @@
 package com.ipotato.book.service;
 
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.DubboService;
 
 /**
  * @author junye
  * @date 2023-04-26 20:26
  */
-@Service
-public class DemoService {
+@DubboService
+public class DemoServiceImpl implements DemoService {
 
+    @Override
     public String getUser() {
         return "duoduo";
     }

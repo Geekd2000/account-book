@@ -1,5 +1,6 @@
 package com.ipotato.book.service;
 
+import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,11 +13,11 @@ import javax.annotation.Resource;
 @Service
 public class DemoGatewayService {
 
-    @Resource
-    private RestTemplate restTemplate;
+    @DubboReference
+    private DemoService demoService;
 
     public String getOrder() {
-        return restTemplate.getForObject("http://localhost:8080/user", String.class);
+        return demoService.getUser();
     }
 
 }
