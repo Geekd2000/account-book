@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.account.book.entity.mapper.AcctBookGroupDOMapper">
 
-    <resultMap id="BaseResultMap" type="com.account.book.entity.AcctBookGroupDO">
+    <resultMap id="BaseResultMap" type="com.account.book.dataobject.AcctBookGroupDO">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
             <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.account.book.entity.mapper.BacctOokBillRecordDOMapper">
 
-    <resultMap id="BaseResultMap" type="com.account.book.entity.BacctOokBillRecordDO">
+    <resultMap id="BaseResultMap" type="com.account.book.dataobject.BacctOokBillRecordDO">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
             <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
