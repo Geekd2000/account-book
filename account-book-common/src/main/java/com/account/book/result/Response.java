@@ -1,7 +1,7 @@
 package com.account.book.result;
 
 import com.account.book.enums.ResponseEnum;
-import org.springframework.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
 import java.util.UUID;

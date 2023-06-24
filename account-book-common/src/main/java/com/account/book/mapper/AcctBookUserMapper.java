@@ -1,6 +1,7 @@
 package com.account.book.mapper;
 
 import com.account.book.dataobject.AcctBookUserDO;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author 87735
@@ -17,6 +18,13 @@ public interface AcctBookUserMapper {
     int insertSelective(AcctBookUserDO record);
 
     AcctBookUserDO selectByPrimaryKey(Long id);
+
+    /**
+     * 根据username查找用户
+     * @param username
+     * @return
+     */
+    AcctBookUserDO selectByUsername(@Param("username") String username);
 
     int updateByPrimaryKeySelective(AcctBookUserDO record);
 

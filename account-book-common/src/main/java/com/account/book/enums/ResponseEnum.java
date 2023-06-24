@@ -11,7 +11,9 @@ public enum ResponseEnum {
      */
     SUCCESS(200, "请求成功！"),
 
-    FAILURE(400, "请求失败！");
+    FAILURE(400, "请求失败！"),
+
+    EX_ARG_NULL(400, "参数不能为空！");
 
     private Integer code;
 

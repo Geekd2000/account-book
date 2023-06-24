@@ -21,6 +21,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-cloud-alibaba.version>2.2.10-RC1</spring-cloud-alibaba.version>
         <book-common>1.0.0-SNAPSHOT</book-common>
+        <book-service>1.0.0-SNAPSHOT</book-service>
     </properties>
     <dependencies>
         <dependency>
@@ -29,8 +30,17 @@
             <version>${book-common}</version>
         </dependency>
         <dependency>
+            <groupId>com.account.book</groupId>
+            <artifactId>account-book-service</artifactId>
+            <version>${book-service}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
