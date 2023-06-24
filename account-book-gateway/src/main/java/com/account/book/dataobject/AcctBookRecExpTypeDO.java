@@ -1,24 +1,20 @@
 package com.account.book.dataobject;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 收支分类表
+ *
  * @TableName acct_book_rec_exp_type
  */
-@TableName(value ="acct_book_rec_exp_type")
 @Data
 public class AcctBookRecExpTypeDO implements Serializable {
     /**
      * 主键
      */
-    @TableId(type = IdType.AUTO)
     private Long id;
 
     /**
@@ -71,6 +67,5 @@ public class AcctBookRecExpTypeDO implements Serializable {
      */
     private String extensions;
 
-    @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 }

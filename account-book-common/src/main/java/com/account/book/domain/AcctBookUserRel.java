@@ -1,15 +1,17 @@
 package com.account.book.domain;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 用户角色关系表
- * @TableName acct_book_user_role
+ *
+ * @TableName acct_book_user_rel
  */
 @Data
-public class AcctBookUserRole implements Serializable {
+public class AcctBookUserRel implements Serializable {
     /**
      * 主键
      */

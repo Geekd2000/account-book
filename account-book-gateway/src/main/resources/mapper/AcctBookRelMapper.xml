@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.account.book.mapper.AcctBookRelMapper">
+
+    <resultMap id="BaseResultMap" type="com.account.book.dataobject.AcctBookRelDO">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+            <result property="gmtModified" column="gmt_modified" jdbcType="TIMESTAMP"/>
+            <result property="creator" column="creator" jdbcType="VARCHAR"/>
+            <result property="modifier" column="modifier" jdbcType="VARCHAR"/>
+            <result property="isRemoved" column="is_removed" jdbcType="TINYINT"/>
+            <result property="roleType" column="role_type" jdbcType="VARCHAR"/>
+            <result property="roleName" column="role_name" jdbcType="VARCHAR"/>
+            <result property="roleId" column="role_id" jdbcType="VARCHAR"/>
+            <result property="extensions" column="extensions" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,gmt_create,gmt_modified,
+        creator,modifier,is_removed,
+        role_type,role_name,role_id,
+        extensions
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from acct_book_rel
+        where  id = #{id,jdbcType=BIGINT} 
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from acct_book_rel
+        where  id = #{id,jdbcType=BIGINT} 
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.account.book.dataobject.AcctBookRelDO" useGeneratedKeys="true">
+        insert into acct_book_rel
+        ( id,gmt_create,gmt_modified
+        ,creator,modifier,is_removed
+        ,role_type,role_name,role_id
+        ,extensions)
+        values (#{id,jdbcType=BIGINT},#{gmtCreate,jdbcType=TIMESTAMP},#{gmtModified,jdbcType=TIMESTAMP}
+        ,#{creator,jdbcType=VARCHAR},#{modifier,jdbcType=VARCHAR},#{isRemoved,jdbcType=TINYINT}
+        ,#{roleType,jdbcType=VARCHAR},#{roleName,jdbcType=VARCHAR},#{roleId,jdbcType=VARCHAR}
+        ,#{extensions,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.account.book.dataobject.AcctBookRelDO" useGeneratedKeys="true">
+        insert into acct_book_rel
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="id != null">id,</if>
+                <if test="gmtCreate != null">gmt_create,</if>
+                <if test="gmtModified != null">gmt_modified,</if>
+                <if test="creator != null">creator,</if>
+                <if test="modifier != null">modifier,</if>
+                <if test="isRemoved != null">is_removed,</if>
+                <if test="roleType != null">role_type,</if>
+                <if test="roleName != null">role_name,</if>
+                <if test="roleId != null">role_id,</if>
+                <if test="extensions != null">extensions,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                <if test="id != null">#{id,jdbcType=BIGINT},</if>
+                <if test="gmtCreate != null">#{gmtCreate,jdbcType=TIMESTAMP},</if>
+                <if test="gmtModified != null">#{gmtModified,jdbcType=TIMESTAMP},</if>
+                <if test="creator != null">#{creator,jdbcType=VARCHAR},</if>
+                <if test="modifier != null">#{modifier,jdbcType=VARCHAR},</if>
+                <if test="isRemoved != null">#{isRemoved,jdbcType=TINYINT},</if>
+                <if test="roleType != null">#{roleType,jdbcType=VARCHAR},</if>
+                <if test="roleName != null">#{roleName,jdbcType=VARCHAR},</if>
+                <if test="roleId != null">#{roleId,jdbcType=VARCHAR},</if>
+                <if test="extensions != null">#{extensions,jdbcType=VARCHAR},</if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.account.book.dataobject.AcctBookRelDO">
+        update acct_book_rel
+        <set>
+                <if test="gmtCreate != null">
+                    gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+                </if>
+                <if test="gmtModified != null">
+                    gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+                </if>
+                <if test="creator != null">
+                    creator = #{creator,jdbcType=VARCHAR},
+                </if>
+                <if test="modifier != null">
+                    modifier = #{modifier,jdbcType=VARCHAR},
+                </if>
+                <if test="isRemoved != null">
+                    is_removed = #{isRemoved,jdbcType=TINYINT},
+                </if>
+                <if test="roleType != null">
+                    role_type = #{roleType,jdbcType=VARCHAR},
+                </if>
+                <if test="roleName != null">
+                    role_name = #{roleName,jdbcType=VARCHAR},
+                </if>
+                <if test="roleId != null">
+                    role_id = #{roleId,jdbcType=VARCHAR},
+                </if>
+                <if test="extensions != null">
+                    extensions = #{extensions,jdbcType=VARCHAR},
+                </if>
+        </set>
+        where   id = #{id,jdbcType=BIGINT} 
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.account.book.dataobject.AcctBookRelDO">
+        update acct_book_rel
+        set 
+            gmt_create =  #{gmtCreate,jdbcType=TIMESTAMP},
+            gmt_modified =  #{gmtModified,jdbcType=TIMESTAMP},
+            creator =  #{creator,jdbcType=VARCHAR},
+            modifier =  #{modifier,jdbcType=VARCHAR},
+            is_removed =  #{isRemoved,jdbcType=TINYINT},
+            role_type =  #{roleType,jdbcType=VARCHAR},
+            role_name =  #{roleName,jdbcType=VARCHAR},
+            role_id =  #{roleId,jdbcType=VARCHAR},
+            extensions =  #{extensions,jdbcType=VARCHAR}
+        where   id = #{id,jdbcType=BIGINT} 
+    </update>
+</mapper>
