@@ -8,6 +8,7 @@
         <module>account-book-common</module>
         <module>account-book-gateway</module>
         <module>account-book-task</module>
+        <module>account-book-core</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -27,6 +28,7 @@
         <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
         <mybatis-spring.version>2.0.1</mybatis-spring.version>
         <mybatis.version>3.5.1</mybatis.version>
+        <beanutils.version>1.9.4</beanutils.version>
     </properties>
 
     <dependencyManagement>
@@ -96,7 +98,11 @@
                 <artifactId>lombok</artifactId>
                 <version>1.18.6</version>
             </dependency>
-
+            <dependency>
+                <groupId>commons-beanutils</groupId>
+                <artifactId>commons-beanutils</artifactId>
+                <version>${beanutils.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-devtools</artifactId>
@@ -118,6 +124,17 @@
                         <artifactId>junit-vintage-engine</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring-boot-starter</artifactId>
+                <version>1.9.0</version>
+            </dependency>
+            <!--JWT-->
+            <dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>4.0.0</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>

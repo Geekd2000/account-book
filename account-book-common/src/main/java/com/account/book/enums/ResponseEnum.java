@@ -13,6 +13,10 @@ public enum ResponseEnum {
 
     FAILURE(400, "请求失败！"),
 
+    BAD_REQUEST(400, "请求参数的错误！"),
+
+    UNAUTHORIZED(401, "当前用户没有相应角色/权限,请联系管理员！"),
+
     EX_ARG_NULL(400, "参数不能为空！");
 
     private Integer code;

@@ -3,7 +3,7 @@ package com.account.book.service.impl;
 import com.account.book.dataobject.AcctBookUserDO;
 import com.account.book.dto.AcctBookUserDTO;
 import com.account.book.mapper.AcctBookUserMapper;
-import com.account.book.service.IUserService;
+import com.account.book.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.dozer.Mapper;
@@ -18,7 +18,7 @@ import javax.annotation.Resource;
  */
 @Slf4j
 @Service
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserService {
 
     @Resource
     private Mapper beanMapper;

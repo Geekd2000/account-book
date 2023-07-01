@@ -8,6 +8,7 @@ import java.util.UUID;
 
 /**
  * 响应信息公共类
+ *
  * @author : JiangJunYe
  * @version : 1.0
  * @date : 2023/3/19 13:35
@@ -70,6 +71,7 @@ public class Response<T> implements Serializable {
 
     /**
      * 自定义返回 code 及 message
+     *
      * @param code    响应码
      * @param message 响应信息
      */
@@ -82,6 +84,7 @@ public class Response<T> implements Serializable {
 
     /**
      * 自定义返回 code 及 message(包含响应数据)
+     *
      * @param code    响应码
      * @param message 响应信息
      * @param data    响应数据
@@ -96,35 +99,39 @@ public class Response<T> implements Serializable {
 
     /**
      * 请求成功响应
+     *
      * @param data 响应数据
      * @param <T>  泛型数据
      * @return 返回封装好的响应体
      */
     public static <T> Response<T> success(T data) {
-        return new Response(ResponseEnum.SUCCESS.getCode(), ResponseEnum.SUCCESS.getMessage(), data);
+        return new Response<>(ResponseEnum.SUCCESS.getCode(), ResponseEnum.SUCCESS.getMessage(), data);
     }
 
     /**
      * 请求失败响应
+     *
      * @param <T> 泛型数据
      * @return 返回封装好的响应体
      */
     public static <T> Response<T> failure() {
-        return new Response(ResponseEnum.FAILURE.getCode(), ResponseEnum.FAILURE.getMessage());
+        return new Response<>(ResponseEnum.FAILURE.getCode(), ResponseEnum.FAILURE.getMessage());
     }
 
     /**
      * 自定义请求失败响应
+     *
      * @param responseEnum 响应枚举
      * @param <T>          泛型数据
      * @return 返回封装好的响应体
      */
     public static <T> Response<T> failure(ResponseEnum responseEnum) {
-        return new Response(responseEnum.getCode(), responseEnum.getMessage());
+        return new Response<>(responseEnum.getCode(), responseEnum.getMessage(), null);
     }
 
     /**
      * 自定义请求失败响应
+     *
      * @param code    响应码
      * @param message 响应信息
      * @param <T>     泛型数据
@@ -133,9 +140,9 @@ public class Response<T> implements Serializable {
     public static <T> Response<T> failure(Integer code, String message) {
         ResponseEnum responseEnum = ResponseEnum.valueOfCode(code);
         if (null != responseEnum && !StringUtils.isEmpty(responseEnum.getMessage())) {
-            return new Response(responseEnum.getCode(), responseEnum.getMessage());
+            return new Response<>(responseEnum.getCode(), responseEnum.getMessage());
         }
-        return new Response(code, message);
+        return new Response<>(code, message);
     }
 
 }

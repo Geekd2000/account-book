@@ -19,12 +19,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <book-common>1.0.0-SNAPSHOT</book-common>
+        <book-core>1.0.0-SNAPSHOT</book-core>
     </properties>
     <dependencies>
         <dependency>
             <groupId>com.account.book</groupId>
             <artifactId>account-book-common</artifactId>
             <version>${book-common}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.account.book</groupId>
+            <artifactId>account-book-core</artifactId>
+            <version>${book-core}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

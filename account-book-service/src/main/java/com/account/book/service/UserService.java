@@ -1,7 +1,6 @@
 package com.account.book.service;
 
 import com.account.book.dto.AcctBookUserDTO;
-import com.account.book.result.Response;
 
 /**
  * 用户表服务
@@ -10,7 +9,7 @@ import com.account.book.result.Response;
  * @version : 1.0
  * @date : 2023/6/24 16:39
  */
-public interface IUserService {
+public interface UserService {
 
     AcctBookUserDTO register(AcctBookUserDTO userDTO);
 

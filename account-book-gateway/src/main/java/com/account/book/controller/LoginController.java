@@ -3,7 +3,7 @@ package com.account.book.controller;
 import com.account.book.dto.AcctBookUserDTO;
 import com.account.book.enums.ResponseEnum;
 import com.account.book.result.Response;
-import com.account.book.service.IUserService;
+import com.account.book.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +24,7 @@ import javax.annotation.Resource;
 public class LoginController {
 
     @Resource
-    private IUserService userService;
+    private UserService userService;
 
     @GetMapping("/getByUsername")
     public Response<AcctBookUserDTO> getByUsername(@RequestParam("username") String username) {
