@@ -25,7 +25,8 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
         try {
-            return executeLogin(request, response);
+            return true;
+//            return executeLogin(request, response); todo jwt filter
         } catch (Exception e) {
             logger.error("isAccessAllowed Token 失效请重新登录 ");
             this.sendChallenge(request, response);
